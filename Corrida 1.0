@@ -1,0 +1,61 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+let xJogador1 = 0; //jogador 1
+let xJogador2 = 0; // jogador 2
+
+function draw () {
+  ativaJogo();
+  desenhaJogadores();
+ desenhaLinhaDeChegada();
+ verificaVencedor();
+
+}
+
+
+
+function ativaJogo(){
+  if (focused == true) {
+    background ('red'); // deixa o fundo vermelho quando clicado
+    } else {
+    background ("blue"); // deixa o fundo azul quando clicado
+  }
+ } 
+ 
+function desenhaJogadores(){
+textSize (60);
+  text("🕸",xJogador1,100); // adiciona emojis 
+  text("🕷",xJogador2,300); // adiciona emojis
+}
+  
+function desenhaLinhaDeChegada(){
+fill('white');
+  rect(350, 0 ,10, 400);
+fill('black');
+for (let yAtual = 0; yAtual <400; yAtual+=20){
+rect(350,yAtual,10,10);
+}
+}
+function verificaVencedor(){
+if (xJogador1 > 350){
+    textSize (20);
+    text("Jogador 1 Venceu!",20,200); // adiciona texto para anunciar o vencedor
+    noLoop();
+  }
+  if (xJogador2 >350) {
+    textSize(20);
+    text("Jogador 2 Venceu!",20,200);
+    noLoop();
+  }
+}
+
+function keyReleased() {
+  if (key === "l") {
+    xJogador1 += random(20);
+  }
+  if (key === "w") {
+    xJogador2 += random(20);
+  }
+  
+}
