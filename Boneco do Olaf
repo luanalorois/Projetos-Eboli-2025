@@ -1,0 +1,39 @@
+function setup() {
+  createCanvas(400, 400);
+  
+  let olhoX;
+  let olhoY;
+} 
+
+function draw() {
+  background(220,0,250);
+  fill('white')
+  circle (250,200,300);
+  fill('black')
+  circle(150,150,70);
+  circle (255,150,70)
+line(300,220,100,250)
+line(295,260)
+fill('orange')
+triangle (196,188,25,150,100,200,288,240)
+triangle(200,50,50);line(264,250);
+  
+  fill('green')
+  olhoX=map(mouseX,0,400,130,170)
+olhoY=map(mouseY,0,400,130,170)
+circle(olhoX,olhoY,10)
+  circle(olhoX+100,olhoY,10)
+  
+  if(mouseIsPressed){
+    console.log(mouseX,mouseY)
+}
+
+
+line(201,305);
+line(100,255);
+}
+
+
+
+
+
